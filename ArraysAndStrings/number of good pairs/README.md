@@ -1,11 +1,12 @@
 ## Number of Good Pairs
 
 Here we shall solve [Number of Good Pairs](https://leetcode.com/problems/number-of-good-pairs/) challenge
-Given an array of integers nums, return the number of good pairs.
 
 ### Question
 
-A pair (i, j) is called good if nums[i] == nums[j] and i < j.
+Given an array of integers nums, return the number of good pairs.
+
+> A pair (i, j) is called good if nums[i] == nums[j] and i < j.
 
 Example 1:
 
