@@ -1,3 +1,8 @@
+/**
+ * @param {string[]} strs
+ * @return {string[][]}
+ */
+
 const groupAnagrams = strs => {
 	let results = {}
 
