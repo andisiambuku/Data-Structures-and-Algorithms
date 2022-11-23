@@ -69,6 +69,54 @@ class LinkedList {
 		node.next = nodeToInsert
 		return this.head
 	}
+	// remove a node from a specific index
+	deleteRandomIndex(index){
+		if(!this.head){
+			this.head=new Node(data);
+			return;
+		}
+		if(index===0){
+			this.head=this.head.next;
+			return;
+		}
+		const previousNode = this.getAt(index-1);
+		if(!previous || !previous.next){
+			return;
+		}
+		previous.next = previous.next.next;
+		return this.head
+	}
+
+	// remove the first node
+	deleteFirstNode(){
+		if(!this.head){
+			return;
+		}
+		this.head = this.head.next;
+		return this.head;
+	}
+
+	//  remove the last node
+	deleteLastNode(){
+		if(!this.head){
+			return null;
+		}
+		
+		if(!this.head.next){
+			this.head = null;
+			return;
+		}
+	   let previous = this.head;
+	   let tail = this.head.next;
+	   
+	   while(tail.next !== null){
+		   previous = tail;
+		   tail = tail.next;
+	   }
+	   
+	   previous.next = null;
+	   return this.head;
+	}
 }
 
 let firstNode = new ListNode(1)
@@ -81,6 +129,11 @@ console.log(linkedList)
 linkedList.addToTail(48)
 console.log(linkedList)
 
+linkedList.deleteFirstNode()
+console.log(linkedList);
+
+linkedList.deleteLastNode()
+console.log(linkedList);
 // linkedList.addToFirstPosition(0)
 // console.log(linkedList)
 
