@@ -70,78 +70,72 @@ class LinkedList {
 		return this.head
 	}
 	// remove a node from a specific index
-	deleteRandomIndex(index){
-		if(!this.head){
-			this.head=new Node(data);
-			return;
+	deleteRandomIndex(index) {
+		if (!this.head) {
+			this.head = new Node(data)
+			return
 		}
-		if(index===0){
-			this.head=this.head.next;
-			return;
+		if (index === 0) {
+			this.head = this.head.next
+			return this.head
 		}
-		const previousNode = this.getAt(index-1);
-		if(!previous || !previous.next){
-			return;
+		const previousNode = this.getNodePosition(index - 1)
+		if (!previousNode || !previousNode.next) {
+			return
 		}
-		previous.next = previous.next.next;
+		previousNode.next = previousNode.next.next
 		return this.head
 	}
 
 	// remove the first node
-	deleteFirstNode(){
-		if(!this.head){
-			return;
+	deleteFirstNode() {
+		if (!this.head) {
+			return
 		}
-		this.head = this.head.next;
-		return this.head;
+		this.head = this.head.next
+		return this.head
 	}
 
 	//  remove the last node
-	deleteLastNode(){
-		if(!this.head){
-			return null;
+	deleteLastNode() {
+		if (!this.head) {
+			return null
 		}
-		
-		if(!this.head.next){
-			this.head = null;
-			return;
+
+		if (!this.head.next) {
+			this.head = null
+			return
 		}
-	   let previous = this.head;
-	   let tail = this.head.next;
-	   
-	   while(tail.next !== null){
-		   previous = tail;
-		   tail = tail.next;
-	   }
-	   
-	   previous.next = null;
-	   return this.head;
+		let previous = this.head
+		let tail = this.head.next
+
+		while (tail.next !== null) {
+			previous = tail
+			tail = tail.next
+		}
+
+		previous.next = null
+		return this.head
 	}
 }
 
 let firstNode = new ListNode(1)
 let linkedList = new LinkedList(firstNode)
+
+linkedList.addToFirstPosition(2)
 console.log(linkedList)
 
-// linkedList.addToFirstPosition(2)
-// console.log(linkedList)
+linkedList.addToAnyPosition(100, 0)
+console.log(linkedList)
 
 linkedList.addToTail(48)
 console.log(linkedList)
 
 linkedList.deleteFirstNode()
-console.log(linkedList);
+console.log(linkedList)
+
+linkedList.deleteRandomIndex(0)
+console.log(linkedList)
 
 linkedList.deleteLastNode()
-console.log(linkedList);
-// linkedList.addToFirstPosition(0)
-// console.log(linkedList)
-
-// linkedList.addToAnyPosition(10, 1)
-// linkedList.addToAnyPosition(100, 0)
-// linkedList.addToAnyPosition(4, 3)
-
-// console.log(linkedList)
-// console.log(linkedList.head)
-// console.log(linkedList.head.next)
-// console.log(linkedList.head.next.next)
+console.log(linkedList)
