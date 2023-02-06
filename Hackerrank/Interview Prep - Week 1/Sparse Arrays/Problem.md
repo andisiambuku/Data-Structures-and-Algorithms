@@ -24,4 +24,4 @@ Input Format
 The first line contains and integer n, the size ofstrings[].
 Each of the next n lines contains a string strings[i] .
 The next line contains , the size of queries[].
-Each of the next  lines contains a stringqueries[]
+Each of the next  lines contains a stringqueries[] 
