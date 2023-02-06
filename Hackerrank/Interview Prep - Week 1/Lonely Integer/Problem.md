@@ -20,4 +20,4 @@ int: the element that occurs only once
 Input Format
 
 The first line contains a single integer, n, the number of integers in the array.
-The second line contains n space-separated integers that describe the values in a 
+The second line contains n space-separated integers that describe the values in a
