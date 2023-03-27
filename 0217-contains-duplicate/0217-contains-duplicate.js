@@ -3,18 +3,36 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    let hashmap={}
+    let set = new Set();
+    
+    
+    
     for(let i=0; i<nums.length; i++){
-        if(hashmap[nums[i]]){
-            hashmap[nums[i]] += 1
+        if(set.has(nums[i])){
+            return true;
         }else{
-            hashmap[nums[i]] = 1
+            set.add(nums[i])
         }
+        
     }
-    for(let i=0; i<nums.length; i++){
-        if(hashmap[nums[i]]>1){
-            return true
-        }
-    }
-    return false
+    return false;
+    
+    
 };
+
+
+
+// let hashmap={}
+//     for(let i=0; i<nums.length; i++){
+//         if(hashmap[nums[i]]){
+//             hashmap[nums[i]] += 1
+//         }else{
+//             hashmap[nums[i]] = 1
+//         }
+//     }
+//     for(let i=0; i<nums.length; i++){
+//         if(hashmap[nums[i]]>1){
+//             return true
+//         }
+//     }
+//     return false
