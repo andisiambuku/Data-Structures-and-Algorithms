@@ -12,17 +12,23 @@
  */
 var reverseList = function(head,previous=null) {
     
-    let curr = head
-    let prev = null
+    //iterative approach
+//     let curr = head
+//     let prev = null
     
-    while(curr !== null){
-        let next = curr.next
-        curr.next = prev
-        prev = curr
-        curr = next
-    } 
-    return prev;
+//     while(curr !== null){
+//         let next = curr.next
+//         curr.next = prev
+//         prev = curr
+//         curr = next
+//     } 
+//     return prev;
     
+    // recursive approach
+    if(head === null) return previous
+    const next = head.next
+    head.next = previous
+    return reverseList(next, head)
     
     
     
@@ -70,12 +76,12 @@ var reverseList = function(head,previous=null) {
     // Time Complexity => O(n)
 
    
-     if(!head) return previous
+//      if(!head) return previous
     
-    let next = head.next
+//     let next = head.next
     
-    head.next = previous
-    return reverseList(next,head)
+//     head.next = previous
+//     return reverseList(next,head)
 
 
 
