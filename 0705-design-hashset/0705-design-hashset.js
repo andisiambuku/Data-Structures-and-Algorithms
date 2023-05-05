@@ -1,7 +1,7 @@
 
 var MyHashSet = function() {
-    //intialize a HashSet
-    this.hashMap = {}
+    //initializing HashSet using an array
+    this.arr = []
 };
 
 /** 
@@ -9,8 +9,11 @@ var MyHashSet = function() {
  * @return {void}
  */
 MyHashSet.prototype.add = function(key) {
-    //add property
-    this.hashMap[key] = null
+   const found = this.arr.includes(key) 
+   if(!found){
+       this.arr.push(key)
+   }
+    
 };
 
 /** 
@@ -18,8 +21,11 @@ MyHashSet.prototype.add = function(key) {
  * @return {void}
  */
 MyHashSet.prototype.remove = function(key) {
-    //removing the key
-    delete this.hashMap[key]
+   const find = this.arr.indexOf(key)
+   if(find >= 0){
+       this.arr.splice(find,1)
+   }
+  
 };
 
 /** 
@@ -27,8 +33,8 @@ MyHashSet.prototype.remove = function(key) {
  * @return {boolean}
  */
 MyHashSet.prototype.contains = function(key) {
-    //checking if a certain value specified in key exists
-    return this.hashMap.hasOwnProperty(key)
+    return this.arr.includes(key)
+
     
 };
 
