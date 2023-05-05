@@ -15,6 +15,7 @@ MyHashSet.prototype.add = function(key) {
    }
     
 };
+// Time Complexity = O(n)
 
 /** 
  * @param {number} key
@@ -27,16 +28,19 @@ MyHashSet.prototype.remove = function(key) {
    }
   
 };
+// Time Complexity = O(n)
 
 /** 
  * @param {number} key
  * @return {boolean}
  */
 MyHashSet.prototype.contains = function(key) {
-    return this.arr.includes(key)
-
-    
+    return this.arr.includes(key)    
 };
+// Time Complexity = O(n)
+
+// Space Complexity = O(n)
+
 
 /** 
  * Your MyHashSet object will be instantiated and called as such:
