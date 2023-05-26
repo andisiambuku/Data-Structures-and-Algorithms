@@ -15,26 +15,18 @@ var isPalindrome = function(x) {
     // splitting to individual digits
     let xSplit = x.toString().split(""), xDigit = 0
        
-    while(xDigit < xSplit.length){
+    while(xDigit < xSplit.length /2){
           if(xSplit[xDigit] != xSplit[xSplit.length -xDigit -1]){
                     return false
                 }
-            xDigit += 1
+                xDigit += 1
           }
     
-    //
-//     for(let i=0; i<xSplit.length; i++){
-//         //comparing the first and last digit 
-//         if(xSplit[i] != xSplit[xSplit.length -i -1]){
-            
-//             return false
-//         }
-//     }
     return true
 }
 
-// Time Complexity
-// Space Complexity
+// Time Complexity -> O(n)/2
+// Space Complexity -> O(n)
 
 // 1 -> 2 -> 1 = 121
 // 1 <- 2 <- 1 = 121 Palindrome
