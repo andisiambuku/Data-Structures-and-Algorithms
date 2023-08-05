@@ -4,27 +4,14 @@
  * @return {number[]}
  */
 var twoSum = function(nums, target) {
-    //loop through the array
     for(let i=0; i<nums.length; i++){
-        // keep track of indices with i and j
-        for(let j= i+1;j<nums.length; j++){
-             //tabulate two consecutive numbers
-            if(nums[i]+nums[j]===target){
-                //return indices that add up too the target
-                return[i,j]
+        for(let j=i+1;j<nums.length;j++){
+            const sum = nums[i] +nums[j]
+            if(sum===target){
+                return [i,j]
             }
         }
-    }
-    /*
-      let hashmap = {}
-    for(let i = 0; i < nums.length; i++){
-        let diff = target - nums[i]
-        if(hashmap[diff] !== undefined){
-            return [hashmap[diff], i]
-        } else {
-            hashmap[nums[i]] = i
-        }
+
     }
     
-    */
 };
